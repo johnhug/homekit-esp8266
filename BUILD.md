@@ -5,9 +5,10 @@
 Currently hardlinked from the `esp-open-sdk` repo.
 
 These patches were needed to achieve success.
-    1. Bash (`crosstool-NG/configure.ac`) - Add 5 to the version regex
-    1. Expat (`crosstool-NG/config/companion_libs/expat.in`) - Change to 2.4.1
-    1. 121-isl (`crosstool-NG/scripts/build/companion_libs/121-isl.sh`) - Change to http://gcc.gnu.org/pub/gcc/infrastructure
+
+1. Bash (`crosstool-NG/configure.ac`) - Add 5 to the version regex
+1. Expat (`crosstool-NG/config/companion_libs/expat.in`) - Change to 2.4.1
+1. 121-isl (`crosstool-NG/scripts/build/companion_libs/121-isl.sh`) - Change to http://gcc.gnu.org/pub/gcc/infrastructure
 
 All contained in the `crosstool-NG.patch` file
 
