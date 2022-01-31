@@ -1,0 +1,29 @@
+diff --git a/src/server.c b/src/server.c
+index 03deaab..038db10 100644
+--- a/src/server.c
++++ b/src/server.c
+@@ -149,7 +149,7 @@ typedef struct {
+         struct {
+             uint16_t aid;
+             uint16_t iid;
+-        } ids[25];
++        } ids[60];
+         characteristic_format_t format;
+     } endpoint_params;
+ 
+@@ -4299,6 +4299,7 @@ int homekit_accessories_init(homekit_server_t *server) {
+ 
+             server->service_infos[service_idx].service = service;
+             if (service->id) {
++                server->service_infos[service_idx].iid = service->id;
+                 if (service->id >= iid)
+                     iid = service->id+1;
+             } else {
+@@ -4311,6 +4312,7 @@ int homekit_accessories_init(homekit_server_t *server) {
+                 server->characteristic_infos[characteristic_idx].ch = ch;
+                 server->characteristic_infos[characteristic_idx].aid = server->accessory_infos[accessory_idx].aid;
+                 if (ch->id) {
++                    server->characteristic_infos[characteristic_idx].iid = ch->id;
+                     if (ch->id >= iid)
+                         iid = ch->id+1;
+                 } else {

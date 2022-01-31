@@ -1,0 +1,4 @@
+#define HOMEKIT_PASSWORD  "159-85-071"
+#define HOMEKIT_SETUPID   "CFA8"
+#define HOMEKIT_NAME      "Hat"
+#define HOMEKIT_SERIAL    "92691e1040f9"

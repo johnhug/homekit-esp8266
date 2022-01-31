@@ -1,0 +1,4 @@
+#define HOMEKIT_PASSWORD  "408-03-437"
+#define HOMEKIT_SETUPID   "35A9"
+#define HOMEKIT_NAME      "Haku"
+#define HOMEKIT_SERIAL    "1302a6bab770"

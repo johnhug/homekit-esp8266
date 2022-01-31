@@ -1,0 +1,4 @@
+firmware/
+build/
+.DS_Store
+.vscode

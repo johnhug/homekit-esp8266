@@ -1,0 +1,48 @@
+diff --git a/config/companion_libs/expat.in b/config/companion_libs/expat.in
+index 1dff4a79..399b826f 100644
+--- a/config/companion_libs/expat.in
++++ b/config/companion_libs/expat.in
+@@ -6,9 +6,9 @@ choice
+ # Don't remove next line
+ # CT_INSERT_VERSION_BELOW
+ 
+-config EXPAT_V_2_1_0
++config EXPAT_V_2_4_1
+     bool
+-    prompt "2.1.0"
++    prompt "2.4.1"
+ 
+ endchoice
+ 
+@@ -16,4 +16,4 @@ config EXPAT_VERSION
+     string
+ # Don't remove next line
+ # CT_INSERT_VERSION_STRING_BELOW
+-    default "2.1.0" if EXPAT_V_2_1_0
++    default "2.4.1" if EXPAT_V_2_4_1
+diff --git a/configure.ac b/configure.ac
+index 5d512fe8..872a73de 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -190,7 +190,7 @@ AC_CACHE_VAL([ac_cv_path__BASH],
+ AC_CACHE_CHECK([for bash >= 3.1], [ac_cv_path__BASH],
+     [AC_PATH_PROGS_FEATURE_CHECK([_BASH], [bash],
+         [[_BASH_ver=$($ac_path__BASH --version 2>&1 \
+-                     |$EGREP '^GNU bash, version (3\.[1-9]|4)')
++                     |$EGREP '^GNU bash, version (3\.[1-9]|4|5)')
+           test -n "$_BASH_ver" && ac_cv_path__BASH=$ac_path__BASH ac_path__BASH_found=:]],
+         [AC_MSG_RESULT([no])
+          AC_MSG_ERROR([could not find bash >= 3.1])])])
+diff --git a/scripts/build/companion_libs/121-isl.sh b/scripts/build/companion_libs/121-isl.sh
+index a93d1aad..0ec79007 100644
+--- a/scripts/build/companion_libs/121-isl.sh
++++ b/scripts/build/companion_libs/121-isl.sh
+@@ -14,7 +14,7 @@ if [ "${CT_ISL}" = "y" ]; then
+ # Download ISL
+ do_isl_get() {
+     CT_GetFile "isl-${CT_ISL_VERSION}" \
+-        http://isl.gforge.inria.fr
++        http://gcc.gnu.org/pub/gcc/infrastructure
+ }
+ 
+ # Extract ISL

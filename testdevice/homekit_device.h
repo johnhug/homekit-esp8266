@@ -1,0 +1,4 @@
+#define HOMEKIT_PASSWORD  "861-70-923"
+#define HOMEKIT_SETUPID   "9D80"
+#define HOMEKIT_NAME      "TEST"
+#define HOMEKIT_SERIAL    "9a620c24020a"
