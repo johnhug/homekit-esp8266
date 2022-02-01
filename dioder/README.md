@@ -1,3 +1,5 @@
+# Dioder
+
 HomeKit interface for PWM control 12v IKEA Dioder leds.
 
 Hardware has 4 mosfets to control two strips of Dioder.  One strip is RGB and the other is White.
