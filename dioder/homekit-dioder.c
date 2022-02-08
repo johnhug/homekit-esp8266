@@ -130,9 +130,9 @@ void update_pwm() {
 
   if (color_on) {
     uint8_t r, g, b;
-    float dim = color_brightness / 100.0f;
+    float dim = percent(color_brightness);
 
-    hs2rgb(color_hue, color_saturation / 100.0f, &r, &g, &b);
+    hs2rgb(color_hue, percent(color_saturation), &r, &g, &b);
 
     red_pin_value = map(r * dim, 0, 255, 0, UINT16_MAX);
     green_pin_value = map(g * dim, 0, 255, 0, UINT16_MAX);

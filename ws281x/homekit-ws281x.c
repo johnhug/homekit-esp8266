@@ -420,7 +420,8 @@ void updateColors() {
   uint8_t color_idx = 0;
   for (uint8_t i = 0; i < 7; i++) {
     if (hk_colors_on[i]) {
-      hs2rgb(hk_colors_hue[i], hk_colors_saturation[i] / 100.0f,
+      hs2rgb(hk_colors_hue[i],
+             percent(hk_colors_saturation[i]),
              &tmp_colors[color_idx].red,
              &tmp_colors[color_idx].green,
              &tmp_colors[color_idx].blue

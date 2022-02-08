@@ -131,7 +131,7 @@ void common_init(const char *name, homekit_service_t *info_service) {
 //}
 
 float percent(int value) {
-  return value / 100.0f;
+  return (float) value / 100.0f;
 }
 
 int map(int value, int in_lower, int in_upper, int out_lower, int out_upper) {
@@ -149,7 +149,7 @@ float hsv_f(float n, uint16_t h, float s, float v) {
   return v - v * s * fmax(fmin(fmin(k, 4-k), 1), 0);
 }
 
-void hs2rgb(uint16_t h, uint8_t s, uint8_t *r, uint8_t *g, uint8_t *b) {
+void hs2rgb(uint16_t h, float s, uint8_t *r, uint8_t *g, uint8_t *b) {
   float v = 1;
   *r = 255 * hsv_f(5, h, s, v);
   *g = 255 * hsv_f(3, h, s, v);
