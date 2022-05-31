@@ -481,12 +481,10 @@ void updatePixels() {
 }
 
 void solid() {
-  if (colors_enabled > 0) {
-    for (uint16_t i = 0; i < hk_led_count; i++) {
-      setPixel(i, colors[0], 1.0f);
-    }
-    updatePixels();
+  for (uint16_t i = 0; i < hk_led_count; i++) {
+    setPixel(i, colors[0], 1.0f);
   }
+  updatePixels();
 }
 
 uint8_t mix(uint8_t a, uint8_t b, float ratio) {
@@ -588,7 +586,7 @@ void ws281x_service(void *_args) {
   uint32_t last_call_time = 0;
 
   while (true) {
-    if (hk_strip_on) {
+    if (hk_strip_on && colors_enabled > 0) {
       // max delay 250ms, min delay 1ms (min due to while pause)
       float delay = hk_speed * -2.5f + 250;
       float delay_factor = 1.0f;
